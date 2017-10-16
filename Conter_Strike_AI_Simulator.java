@@ -1,3 +1,9 @@
+package javaapplication34;
+
+/**
+ *
+ * @author Utkarsh Gupta
+ */
 /**
  *
  * @author Utkarsh Gupta
@@ -390,6 +396,7 @@ class GameEngine
     
     public int Site(Player p1,Player p2)
     {
+        System.out.println("c3");
         Position p1p = p1.getPosition();
         Position p2p = p2.getPosition();
         double p1x = p1p.getX();
@@ -399,13 +406,21 @@ class GameEngine
         double gamma = Math.atan2((p2y-p1y), (p2x-p1x));
         double orientation1 = p1.getOrientation();
         double site1 = p1.getSite();
+        System.out.println("c4");
         if(Math.cos(orientation1-gamma)>Math.cos(site1))
+        {
+            System.out.println("c5");
             return 1;
+        }
         else
+        {
+            System.out.println("c6"); 
             return 0;
+        }
     }
     public ArrayList<Player> fire(ArrayList<Player> players_array,int index)
     {
+        
         if(players_array.get(index).getHit_to_die()==1)
         {
             players_array.set(index, null);
@@ -575,8 +590,10 @@ class GameEngine
                                 double p2y = p2p.getY();
                                 String s1 = p2.getType();
                                 String s2 = p.getType();
+                                System.out.println(p.getType());
                                         if(Site(p,p2)==1 && s1.compareTo(s2)!=0)
                                         {
+                                            System.out.println("c2");
                                             opponents_array = fire(opponents_array,i);
                                             p.Success();
                                         }
@@ -678,6 +695,8 @@ class JavaApplication34 {
             double py = sc.nextDouble();
             Position position = new Position(px,py);
             double orientation = sc.nextDouble();
+            orientation*=pi;
+            orientation/=180;
             int energy_level = sc.nextInt();
             int speed = sc.nextInt();
             switch(type)
@@ -707,6 +726,8 @@ class JavaApplication34 {
             double py = sc.nextDouble();
             Position position = new Position(px,py);
             double orientation = sc.nextDouble();
+            orientation*=pi;
+            orientation/=180;
             int energy_level = sc.nextInt();
             int speed = sc.nextInt();
             switch(type)

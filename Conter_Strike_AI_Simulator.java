@@ -651,12 +651,13 @@ class GameEngine
         System.out.println("COUNTER - TERRORISTS WON");
     }
 }
-class InputHandler {
+class JavaApplication34 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        double pi = Math.PI;
         Scanner sc = new Scanner(System.in);
         int total_terrorists = sc.nextInt();
         int total_counter_terrorists = sc.nextInt();
@@ -671,6 +672,8 @@ class InputHandler {
             String type = sc.next();
             String strategy = sc.next();
             double site = sc.nextDouble();
+            site*=pi;
+            site/=180;
             double px = sc.nextDouble();
             double py = sc.nextDouble();
             Position position = new Position(px,py);
@@ -698,6 +701,8 @@ class InputHandler {
             String type = sc.next();
             String strategy = sc.next();
             double site = sc.nextDouble();
+            site*=pi;
+            site/=180;
             double px = sc.nextDouble();
             double py = sc.nextDouble();
             Position position = new Position(px,py);
@@ -724,4 +729,3 @@ class InputHandler {
         gameengine.play();
     }
 }
-

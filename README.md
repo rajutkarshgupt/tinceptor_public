@@ -37,7 +37,7 @@ Next 7*n - Lines :-
 
 SAMPLE - TSET - CASES :-
 
-SAMPLE - INPUT :-
+1) SAMPLE - INPUT :-
 1 1
 0 0
 circular
@@ -58,3 +58,25 @@ bomb
 1
 SAMPLE - OUTPUT :-
 COUNTER - TERRORISTS WON
+
+2) SAMPLE - INPUT :-
+1 1
+0 0 
+circular
+circular 
+aggressive 
+bomb 
+50.0
+1 0 
+180.0 
+10 
+1 
+cautious 
+bomb 
+50.0
+0 1
+315.0 
+10 
+1
+SAMPLE - OUTPUT :-
+TERRORISTS WON

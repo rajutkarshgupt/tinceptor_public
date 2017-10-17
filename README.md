@@ -15,6 +15,9 @@ ORDER OF PLAYING OF TERRORISTS
 4th - Line :-
 ORDER OF PLAYING OF COUNTER - TERRORISTS
 
+5th - Line :-
+STORAGE - TYPE ("array" or "list")
+
 Next 7*m - Lines :-
 
 1) PLAYER - TYPE OF i-th TERRORIST
@@ -42,6 +45,7 @@ SAMPLE - TSET - CASES :-
 0 0
 circular
 circular
+list
 aggressive
 bomb
 90
@@ -63,7 +67,54 @@ COUNTER - TERRORISTS WON
 1 1
 0 0 
 circular
-circular 
+circular
+list
+aggressive 
+bomb 
+50.0
+1 0 
+180.0 
+10 
+1 
+cautious 
+bomb 
+50.0
+0 1
+315.0 
+10 
+1
+SAMPLE - OUTPUT :-
+TERRORISTS WON
+
+3) SAMPLE - INPUT :-
+1 1
+0 0
+circular
+circular
+array
+aggressive
+bomb
+90
+3 0
+180
+10
+1
+cautious
+bomb
+90
+4 0
+180
+10
+1
+SAMPLE - OUTPUT :-
+COUNTER - TERRORISTS WON
+
+4) SAMPLE - INPUT :-
+1 1
+0 0 
+circular
+circular
+array
 aggressive 
 bomb 
 50.0

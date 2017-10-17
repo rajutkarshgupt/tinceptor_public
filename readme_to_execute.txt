@@ -14,6 +14,9 @@ ORDER OF PLAYING OF TERRORISTS
 4th - Line :-
 ORDER OF PLAYING OF COUNTER - TERRORISTS
 
+5th - Line :-
+STORAGE - TYPE ("array" or "list")
+
 Next 7*m - Lines :-
 
 1) PLAYER - TYPE OF i-th TERRORIST

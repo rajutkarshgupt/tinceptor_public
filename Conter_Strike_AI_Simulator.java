@@ -1,4 +1,4 @@
-package javaapplication35;
+package InputHandler;
 
 /**
  *

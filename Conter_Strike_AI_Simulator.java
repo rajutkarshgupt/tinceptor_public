@@ -1165,7 +1165,7 @@ class GameEngine
     }
 }
 }
-class JavaApplication35 {
+class InputHandler {
 
     /**
      * @param args the command line arguments

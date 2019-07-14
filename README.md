@@ -146,13 +146,13 @@ DETAIL DESCRIPTION :
 There are two teams: “Terrorists” and “Counter-Terrorists”. The aim of the terrorists is to go to a special pre-determined site called as “Bomb”. The aim of the counter-terrorists is to ensure that none of the terrorists can go to the site called “Bomb”. Because playing this game manually is very boring, you have an AI Engine that automatically plays this game for you. There
 are three kinds of players in both teams possible:
 
- AggressivePlayers, who tend to run very fast and not observe around. Their energy level reduces
+ AggressivePlayers, who tend to run fast. Their energy level reduces
 by 2 at every step of move. They need to be hit twice to be dead.
 
- CautiousPlayers, who tend to go very slow and observe around. Their energy level reduces by 1
+ CautiousPlayers, who tend to go very slow. Their energy level reduces by 1
 at every step of move. They need to be hit once to be dead.
 
- BlindPlayer, who very quickly run to do whatever they are doing, and do not observe around at
+ BlindPlayer, who run very fast, and do not observe around at
 all. Their energy level reduces by 3 at every step. They need to be hit 5 times to be dead.
 
 Each player of counter-terrorists selects an opponent player and goes to kill the same. A player can have
@@ -176,9 +176,6 @@ the players move can be critical to the game. The order may be circular (one cha
 same order by which they entered the arena), by energy level (most fit player moves first), by success (the
 player who killed the maximum opponents moves first). However, first a terrorist moves, then a counter-
 terrorist, then a terrorist and so on, till both the sets expire, and a new turn starts. There is a single order.
-
-The logic may be implemented using a sorted array, unsorted array, sorted linked list, or unsorted linked
-list.
 
 Assume function ‘AImove’ exists for each player of every type that takes the positions of all players and
 goal, and makes a move as per some computation. Also assume that a function site exists for every player,

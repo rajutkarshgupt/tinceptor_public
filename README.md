@@ -143,9 +143,7 @@ TERRORISTS WON
 
 DETAIL DESCRIPTION :
 
-There are two teams: “Terrorists” and “Counter-Terrorists”. The aim
-
-of the terrorists is to go to a special pre-determined site called as “Bomb”. The aim of the counter-
+There are two teams: “Terrorists” and “Counter-Terrorists”. The aim of the terrorists is to go to a special pre-determined site called as “Bomb”. The aim of the counter-
 terrorists is to ensure that none of the terrorists can go to the site called “Bomb”. Because playing this
 
 game manually is very boring, you have an AI Engine that automatically plays this game for you. There

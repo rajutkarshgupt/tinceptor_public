@@ -143,10 +143,7 @@ TERRORISTS WON
 
 DETAIL DESCRIPTION :
 
-There are two teams: “Terrorists” and “Counter-Terrorists”. The aim of the terrorists is to go to a special pre-determined site called as “Bomb”. The aim of the counter-
-terrorists is to ensure that none of the terrorists can go to the site called “Bomb”. Because playing this
-
-game manually is very boring, you have an AI Engine that automatically plays this game for you. There
+There are two teams: “Terrorists” and “Counter-Terrorists”. The aim of the terrorists is to go to a special pre-determined site called as “Bomb”. The aim of the counter-terrorists is to ensure that none of the terrorists can go to the site called “Bomb”. Because playing this game manually is very boring, you have an AI Engine that automatically plays this game for you. There
 are three kinds of players in both teams possible:
 
  AggressivePlayers, who tend to run very fast and not observe around. Their energy level reduces
@@ -177,7 +174,6 @@ terrorists move around.
 The game is sequential in nature. All players make a move one after the other. Hence the order in which
 the players move can be critical to the game. The order may be circular (one chance to every player in the
 same order by which they entered the arena), by energy level (most fit player moves first), by success (the
-
 player who killed the maximum opponents moves first). However, first a terrorist moves, then a counter-
 terrorist, then a terrorist and so on, till both the sets expire, and a new turn starts. There is a single order.
 

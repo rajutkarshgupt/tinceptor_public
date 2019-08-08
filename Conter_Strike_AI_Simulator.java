@@ -141,14 +141,14 @@ class Blind extends Player
     }
     
 }
-class Sortby_energy_level implements Comparator<Player>
+class Sortby_energy_level implements Comparator<Player>     // Comparator is a Java inbuilt Interface ( class Sortby_energy_level HAS A (relationship) Comparator )
 {
     public int compare(Player a, Player b)
     {
         return a.getEnergy_level() - b.getEnergy_level();
     }
 }
-class Sortby_success implements Comparator<Player>
+class Sortby_success implements Comparator<Player>          // Comparator is a Java inbuilt Interface ( class Sortby_energy_level HAS A (relationship) Comparator )
 {
     public int compare(Player a, Player b)
     {

@@ -8,25 +8,36 @@ package InputHandler;
  *
  * @author Utkarsh Gupta
  */
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+/**
+ *
+ * @author Utkarsh Gupta
+ */
 import java.util.*;
 class Position
 {
     private double x;
     private double y;
-
+ 
     public Position(double x, double y) {
         this.x = x;
         this.y = y;
     }
-
+ 
     public double getX() {
         return x;
     }
-
+ 
     public double getY() {
         return y;
     }
-    
+ 
 }
 class Player
 {
@@ -40,7 +51,7 @@ class Player
     private int energy_level;
     private int success=0;
     private int speed;
-
+ 
     public Player(int energy_per_step, int hit_to_die, String strategy, double site, Position position, double orientation, String type, int energy_level,int speed) {
         this.energy_per_step = energy_per_step;
         this.hit_to_die = hit_to_die;
@@ -52,94 +63,94 @@ class Player
         this.energy_level = energy_level;
         this.speed = speed;
     }
-
+ 
     public Player(){}
-    
+ 
     public void setPosition(Position position) {
         this.position = position;
     }
-
+ 
     public void setOrientation(double orientation) {
         this.orientation = orientation;
     }
-
+ 
     public void setHit_to_die() {
         hit_to_die--;
     }
-    
+ 
     public void Success()
     {
         success++;
     }
-
+ 
     public void setEnergy_level() {
         energy_level-=energy_per_step;
     }
-    
+ 
     public int getEnergy_per_step() {
         return energy_per_step;
     }
-
+ 
     public int getHit_to_die() {
         return hit_to_die;
     }
-
+ 
     public String getStrategy() {
         return strategy;
     }
-
+ 
     public double getSite() {
         return site;
     }
-
+ 
     public Position getPosition() {
         return position;
     }
-
+ 
     public double getOrientation() {
         return orientation;
     }
-    
+ 
     public String getType() {
         return type;
     }
-
+ 
     public int getEnergy_level() {
         return energy_level;
     }
-
+ 
     public int getSuccess() {
         return success;
     }
-
+ 
     public int getSpeed() {
         return speed;
     }
-    
+ 
 }
 class Aggressive extends Player
 {
-
+ 
     public Aggressive( String strategy, double site, Position position, double orientation, String type, int energy_level,int speed) {
         super(2,2, strategy, site, position, orientation, type, energy_level,speed);
     }
-    
+ 
 }
 class Cautious extends Player
 {
-
+ 
     public Cautious( String strategy, double site, Position position, double orientation, String type, int energy_level,int speed) {
         super(1,1, strategy, site, position, orientation, type, energy_level,speed);
     }
-    
+ 
 }
 class Blind extends Player
 {
-
+ 
     public Blind( String strategy, double site, Position position, double orientation, String type, int energy_level,int speed) {
         super(3,5, strategy, site, position, orientation, type, energy_level,speed);
     }
-    
+ 
 }
 class Sortby_energy_level implements Comparator<Player>     // Comparator is a Java inbuilt Interface ( class Sortby_energy_level HAS A (relationship) Comparator )
 {
@@ -166,7 +177,7 @@ class ListBased
     private String ter_order;
     private List<Player> counter_terrorists_array = new LinkedList<Player>();
     private String ct_order;
-
+ 
     public Environment(int total_terrorists, int total_counter_terrorists, Position goal, String ter_order, String ct_order) {
         this.total_terrorists = total_terrorists;
         this.total_counter_terrorists = total_counter_terrorists;
@@ -174,69 +185,69 @@ class ListBased
         this.ter_order = ter_order;
         this.ct_order = ct_order;
     }
-
+ 
     public int getTotal_terrorists() {
         return total_terrorists;
     }
-
+ 
     public int getTotal_counter_terrorists() {
         return total_counter_terrorists;
     }
-    
+ 
     public Position getGoal() {
         return goal;
     }
-
+ 
     public List<Player> getTerrorists_array() {
         return terrorists_array;
     }
-    
+ 
     public Player getTerrorists(int index) {
         return terrorists_array.get(index);
     }
-
+ 
     public String getTer_order() {
         return ter_order;
     }
-
+ 
     public List<Player> getCounter_terrorists_array() {
         return counter_terrorists_array;
     }
-    
+ 
     public Player getCounter_terrorists(int index) {
         return counter_terrorists_array.get(index);
     }
-
+ 
     public String getCt_order() {
         return ct_order;
     }
-
+ 
     public void setTerrorists_array(List<Player> terrorists_array) {
         this.terrorists_array = terrorists_array;
     }
-
+ 
     public void setCounter_terrorists_array(List<Player> counter_terrorists_array) {
         this.counter_terrorists_array = counter_terrorists_array;
     }
-    
+ 
     public void setTerrorists(Player terrorist) {
         terrorists_array.add(terrorist);
     }
-    
+ 
     public void setCounter_terrorists(Player counter_terrorist) {
         counter_terrorists_array.add(counter_terrorist);
     }
-    
+ 
     public void updateTerrorists_array(int index,Player p)
     {
         terrorists_array.set(index, p);
     }
-    
+ 
     public void updateCounter_terrorists_array(int index,Player p)
     {
         counter_terrorists_array.set(index, p);
     }
-    
+ 
 }
 abstract class Strategy
 {
@@ -391,11 +402,11 @@ class Bomb extends Strategy
 class GameEngine
 {   
     private Environment environment;
-
+ 
     public GameEngine(Environment environment) {
         this.environment = environment;
     }
-    
+ 
     public int Site(Player p1,Player p2)
     {
         Position p1p = p1.getPosition();
@@ -524,7 +535,7 @@ class GameEngine
                         }
                         break;
                 }
-                
+ 
             }
             else
             {
@@ -671,7 +682,7 @@ class ArrayBased
     private String ter_order;
     private ArrayList<Player> counter_terrorists_array = new ArrayList<Player>();
     private String ct_order;
-
+ 
     public Environment(int total_terrorists, int total_counter_terrorists, Position goal, String ter_order, String ct_order) {
         this.total_terrorists = total_terrorists;
         this.total_counter_terrorists = total_counter_terrorists;
@@ -679,64 +690,64 @@ class ArrayBased
         this.ter_order = ter_order;
         this.ct_order = ct_order;
     }
-
+ 
     public int getTotal_terrorists() {
         return total_terrorists;
     }
-
+ 
     public int getTotal_counter_terrorists() {
         return total_counter_terrorists;
     }
-    
+ 
     public Position getGoal() {
         return goal;
     }
-
+ 
     public ArrayList<Player> getTerrorists_array() {
         return terrorists_array;
     }
-    
+ 
     public Player getTerrorists(int index) {
         return terrorists_array.get(index);
     }
-
+ 
     public String getTer_order() {
         return ter_order;
     }
-
+ 
     public ArrayList<Player> getCounter_terrorists_array() {
         return counter_terrorists_array;
     }
-    
+ 
     public Player getCounter_terrorists(int index) {
         return counter_terrorists_array.get(index);
     }
-
+ 
     public String getCt_order() {
         return ct_order;
     }
-
+ 
     public void setTerrorists_array(ArrayList<Player> terrorists_array) {
         this.terrorists_array = terrorists_array;
     }
-
+ 
     public void setCounter_terrorists_array(ArrayList<Player> counter_terrorists_array) {
         this.counter_terrorists_array = counter_terrorists_array;
     }
-    
+ 
     public void setTerrorists(Player terrorist) {
         terrorists_array.add(terrorist);
     }
-    
+ 
     public void setCounter_terrorists(Player counter_terrorist) {
         counter_terrorists_array.add(counter_terrorist);
     }
-    
+ 
     public void updateTerrorists_array(int index,Player p)
     {
         terrorists_array.set(index, p);
     }
-    
+ 
     public void updateCounter_terrorists_array(int index,Player p)
     {
         counter_terrorists_array.set(index, p);
@@ -896,11 +907,11 @@ class Bomb extends Strategy
 class GameEngine
 {   
     private ArrayBased.Environment environment;
-
+ 
     public GameEngine(ArrayBased.Environment environment) {
         this.environment = environment;
     }
-    
+ 
     public int Site(Player p1,Player p2)
     {
         Position p1p = p1.getPosition();
@@ -1029,7 +1040,7 @@ class GameEngine
                         }
                         break;
                 }
-                
+ 
             }
             else
             {
@@ -1136,6 +1147,7 @@ class GameEngine
                     double y = position.getY();
                     if(x==gx && y==gy)
                     {
+                        System.out.println("TERRORISTS EXPLODED BOMB AT "+gx+" "+gy);
                         System.out.println("TERRORISTS WON");
                         return;
                     }
@@ -1144,6 +1156,8 @@ class GameEngine
             }
             if(flag==1)
             {
+                System.out.println("COUNTER TERRORISTS REMAINING = "+environment.getTotal_counter_terrorists());
+                System.out.println("ALL TERRORISTS KILLED");
                 System.out.println("COUNTER - TERRORISTS WON");
                 return;
             }
@@ -1156,17 +1170,21 @@ class GameEngine
             }
             if(flag==1)
             {
+                System.out.println("TERRORISTS REMAINING = "+environment.getTotal_terrorists());
+                System.out.println("ALL COUNTER TERRORISTS GOT MARTYRED");
                 System.out.println("TERRORISTS WON");
                 return;
             }
             turn++;
         }
+        System.out.println("COUNTER TERRORISTS REMAINING = "+environment.getTotal_counter_terrorists());
+        System.out.println("ALL TERRORISTS KILLED");
         System.out.println("COUNTER - TERRORISTS WON");
     }
 }
 }
-class InputHandler {
-
+class Codechef {
+ 
     /**
      * @param args the command line arguments
      */
@@ -1243,7 +1261,7 @@ class InputHandler {
                     array_environment.setCounter_terrorists(blind);
                     break;
             }
-            
+ 
         }
         ArrayBased.GameEngine arraygameengine = arraybased.new GameEngine(array_environment);
         arraygameengine.play();
@@ -1314,6 +1332,6 @@ class InputHandler {
         listgameengine.play();
                 break;
         }
-        
+ 
     }
 }
